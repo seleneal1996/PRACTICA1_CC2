@@ -4,6 +4,6 @@ using namespace std;
 
 int main()
 {
-    cout << char(9+48) << "o"<<endl;
+    cout << "Hello world!" << endl;
     return 0;
 }
