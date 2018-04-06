@@ -42,11 +42,11 @@ int main()
 void multiplicacion(int m[2][2],int m2[2][2],int m3[2][2])
 {
     //REALIZANDO EL PRODUCTO DE MATRICES
-    for(int i=0;i<2;i++)
+    for(int i=0;i<2;i++)   //recorrer filas de matriz R
     {
-        for(int j=0;j<2;j++)
+        for(int j=0;j<2;j++) // recorre columnas de matriz R
         {
-            for(int z=0;z<2;z++)
+            for(int z=0;z<2;z++) // calculamos el valor para cada elemento
             {
                 m3[i][j] =m3[i][j]+m[i][z]*m2[z][j];
             }

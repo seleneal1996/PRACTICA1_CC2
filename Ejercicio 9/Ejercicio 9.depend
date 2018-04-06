@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1523022903 source:/home/selene/PRACTICA1_CC2/Ejercicio 9/main.cpp
+	<iostream>
+	<string.h>
+	<stdbool.h>
+
