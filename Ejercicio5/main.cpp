@@ -1,18 +1,26 @@
 #include <iostream>
-
 using namespace std;
-int largo(char *cad);
+int longitud(char texto[])
+{
+    int i=0,j=0;
+    //RECCORRIDO
+    while(texto[i]!='\0')
+    {
+        i++;
+    }
+    //ELIMINAMOS ESPACIOS
+    while(texto[j]!='\0')
+    {
+        if(texto[j]=='\n')
+            i--;
+        j++;
+    }
+    return i;
+}
 int main()
 {
-    char cad;
-    cout<<"Ingrese una palabra:"<< endl;
-    cin>>cad;
-    cout<<"La palabra tiene:"<<largo(cad)<<"caracteres."<<endl;
-}
-int largo(char *cad)
-{
-    int i=0;
-    while(*(cad+i)!='\0')
-        i++;
-    return i;
+    char texto[100];
+    cout<<"¿Texto?"<<endl;
+    cin>>texto;
+    cout<<"Su longitud es:"<<longitud(texto);
 }
