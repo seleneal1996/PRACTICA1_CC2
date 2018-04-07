@@ -140,7 +140,7 @@ int main()
     {
         cout<<a[i]<<"   ";
     }
-    //IMPLEMENTAACION DEL MENU DE OPCIONES*********
+    //IMPLEMENTACION DEL MENU DE OPCIONES*********
      if(opcion==1||opcion==2||opcion==3||opcion==4)
      {
         if(opcion==1)
