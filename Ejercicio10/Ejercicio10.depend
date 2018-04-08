@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1523145080 source:/home/selene/PRACTICA1_CC2/Ejercicio10/main.cpp
+	<iostream>
+	<stdio.h>
+
