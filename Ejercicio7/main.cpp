@@ -24,13 +24,9 @@ void concatenar(char a[],char b[],char c[])
 
 void concatenarP(char* s,char* t)
 {
-    /*while(*s != '\0')
+    while(*s != '\0')
     {
         s++;//4
-    }*/
-    for(    ;*s!='\0';s++)
-    {
-        continue;
     }
     while(*t !='\0')
     {
