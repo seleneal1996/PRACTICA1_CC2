@@ -20,14 +20,36 @@ void concatenar(char a[],char b[],char c[])
     }
     c[i+j]='\0';
 }
+
+
+void concatenarP(char* s,char* t)
+{
+    /*while(*s != '\0')
+    {
+        s++;//4
+    }*/
+    for(    ;*s!='\0';s++)
+    {
+        continue;
+    }
+    while(*t !='\0')
+    {
+        *s=*t;
+        s++;
+        t++;
+    }
+    *s=0;
+}
+
 int main()
 {
-    char a[20],b[20],c[40];
+    char* s = new char[5];
+    char* t = new char[5];
     cout<<"¿Cadena 1?"<<endl; //Juan
-    cin>>a;
+    cin>>s;
     cout<<"¿Cadena 2"<<endl; //Peres
-    cin>>b;
-    concatenar(a,b,c);
-    cout<<"Cadena final:"<<c;
+    cin>>t;
+    concatenarP(s,t);
+    cout<<"Cadena final:"<<s;
 }
 

@@ -42,20 +42,13 @@ void quickSort(int a[],int primero,int ultimo)
         quickSort(a,i,ultimo);
 
 }
-void mergeSort(int a[], int aux[],int inicio,int fin)
-{
-        int mitad;
-        if(fin>inicio)
-        {
-            //Dividir la lista desordenada en dos sublistas de aproximadamente la mitad del tamaño.
-            mitad=(fin+inicio)/2;
-            //Ordenar cada sublista recursivamente aplicando el ordenamiento por mezcla.
-            mergeSort(a,aux,inicio,mitad);
-            mergeSort(a,aux,mitad+1,fin);
 
-            //Mezclar las dos sublistas en una sola lista ordenada.
+void merge_(int a[],int aux[], int inicio, int mitad,int fin)
+{
+    //Mezclar las dos sublistas en una sola lista ordenada.
 
             int inicio_end,tam,aux_pos;
+            mitad=(inicio+fin)/2;
             inicio_end=mitad-1;
             aux_pos=inicio;
             tam=fin-inicio+1;
@@ -97,27 +90,27 @@ void mergeSort(int a[], int aux[],int inicio,int fin)
                 fin=fin-1;
             }
 
-        }
+
 }
-void insertionSort(int a[],int tam)
+void mergeSort(int a[], int aux[],int inicio,int fin)
 {
-    //Consta de tomar uno por uno los elementos de un arreglo y recorrerlo hacia su posición con respecto a los anteriormente ordenados.
-    int j,temporal;
-    //RECORRIDO DEL ARREGLO
-    for (int i = 0; i < tam; i++)
-    {
-		j = i;
+        int mitad;
+        if(fin>inicio)
+        {
+            //Dividir la ,lista desordenada en dos sublistas de aproximadamente la mitad del tamaño.
+            mitad=(fin+inicio)/2;
+            //Ordenar cada sublista recursivamente aplicando el ordenamiento por mezcla.
+            mergeSort(a,aux,inicio,mitad);
+            mergeSort(a,aux,mitad+1,fin);
+            merge_(a,aux,inicio,mitad+1,fin);
 
-		while ((j > 0) && (a[j] < a[j-1]))
-		{
-			  temporal = a[j];
-			  a[j] = a[j-1];
-			  a[j-1] = temporal;
-			  j--;
+            for(int i=inicio;i<=fin;i++){
+                cout<<a[i]<<" ";
+            }
+            cout<<"----"<<inicio<<" "<<fin<<endl;
         }
-    }
-
 }
+
 int main()
 {
  int opcion,a[100],tam,aux[100];
@@ -168,8 +161,23 @@ int main()
         else if(opcion==3)
         {
             system("clear");
-            insertionSort(a,tam);
-            cout<<"\n**ORDENADO POR INSERTIONSORT**"<<endl;
+            //insertionSort(a,tam);
+            //Consta de tomar uno por uno los elementos de un arreglo y recorrerlo hacia su posición con respecto a los anteriormente ordenados.
+            int j,temporal;
+            //RECORRIDO DEL ARREGLO
+            for (int i = 0; i < tam; i++)
+            {
+                j = i;
+
+                while ((j > 0) && (a[j] < a[j-1]))
+                {
+                      temporal = a[j];
+                      a[j] = a[j-1];
+                      a[j-1] = temporal;
+                      j--;
+                }
+            }
+            cout<<"\n**ORDENADO POR INSERTION_SORT**"<<endl;
             for(int i=0;i<tam;i++)
             {
                 cout<<a[i]<<"   ";
