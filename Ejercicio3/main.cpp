@@ -163,26 +163,34 @@ int main()
             system("clear");
             //insertionSort(a,tam);
             //Consta de tomar uno por uno los elementos de un arreglo y recorrerlo hacia su posición con respecto a los anteriormente ordenados.
-            int j,temporal;
-            //RECORRIDO DEL ARREGLO
-            for (int i = 0; i < tam; i++)
-            {
-                j = i;
 
-                while ((j > 0) && (a[j] < a[j-1]))
+            int i,pos,auxi;
+            for(i=0;i<tam;i++)
+            {
+                pos=i;
+                auxi=a[i];
+
+                while((pos>0)&&(a[pos-1]>auxi)) // numero a su izq
                 {
-                      temporal = a[j];
-                      a[j] = a[j-1];
-                      a[j-1] = temporal;
-                      j--;
+                    //INTERCAMBIO
+                    a[pos]=a[pos-1];
+                    pos--; //La posicion va disminuyendo
                 }
+                a[pos]=auxi;
+                cout<<"FLAG"<<auxi<<"-";
             }
+
             cout<<"\n**ORDENADO POR INSERTION_SORT**"<<endl;
             for(int i=0;i<tam;i++)
             {
                 cout<<a[i]<<"   ";
             }
             cout<<endl;
+            //DE MAYOR A MENOR :V
+            for(int i=tam-1;i>=0;i--)
+            {
+                cout<<a[i]<<"   ";
+            }
         }
     }
     else
